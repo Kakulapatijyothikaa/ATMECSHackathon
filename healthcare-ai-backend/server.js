@@ -8,9 +8,8 @@ const bodyParser = require('body-parser');
 
 const app = express();
 const PORT = 3000;
-const JWT_SECRET = 'your_jwt_secret'; // Use a more secure secret in production
+const JWT_SECRET = 'your_jwt_secret'; 
 
-// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -27,7 +26,6 @@ const userSchema = new mongoose.Schema({
 });
 const User = mongoose.model('User', userSchema);
 
-// Registration route
 app.post('/register', async (req, res) => {
     const { username, password } = req.body;
     try {
@@ -56,7 +54,6 @@ app.post('/login', async (req, res) => {
     res.json({ message: 'Login successful!', token });
 });
 
-// Dashboard route (protected)
 app.get('/dashboard', (req, res) => {
     const token = req.headers['authorization'];
     if (!token) {
