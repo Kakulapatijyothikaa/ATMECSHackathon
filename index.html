@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Healthcare Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>HealthCare Innovation</h1>
+    <div id="login-section">
+        <h2>Login</h1>
+        <form id="login-form">
+            <input type="email" id="email" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="#" onclick="showRegistration()">Register here</a></p>
+    </div>
+
+    <div id="registration-section" style="display:none;">
+        <h2>Register</h1>
+        <form id="registration-form">
+            <input type="email" id="register-email" placeholder="Email" required>
+            <input type="password" id="register-password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <p>Already have an account? <a href="#" onclick="showLogin()">Login here</a></p>
+    </div>
+
+    <div id="dashboard-section" style="display:none;">
+        <button id="back-to-login" onclick="showLogin123()" style="cursor: pointer;">← Back to Login</button>
+    
+        <h2>Dashboard</h1>
+        <div class="dashboard-options">
+            <button onclick="showMedicalImaging()">Medical Imaging Analysis</button>
+            <button onclick="showPersonalizedTreatment()">Generate Personalized Treatment Plan</button>
+            <button onclick="showVirtualAssistant()">Virtual Assistant Simulation</button>
+            <button onclick="showDrugDiscovery()">Drug Discovery Simulation</button>
+        </div>
+    </div>
+
+    <div id="medical-imaging-section" style="display:none;">
+        <button id="back-to-dashboard" onclick="showDashboard()" style="cursor: pointer;">← Back to Dashboard</button>
+
+        <h2>Medical Imaging Analysis</h2>
+        <input type="file" id="image-upload" />
+        <button onclick="analyzeImage()">Analyze</button>
+        <div id="image-analysis-result"></div>
+    </div>
+
+    <div id="personalized-treatment-section" style="display:none;">
+        <button id="back-to-dashboard" onclick="showDashboard()" style="cursor: pointer;">← Back to Dashboard</button>
+
+        <h2>Generate Personalized Treatment Plan</h2>
+        <textarea id="medical-history" placeholder="Enter medical history"></textarea>
+        <textarea id="genetic-info" placeholder="Enter genetic information"></textarea>
+        <textarea id="lifestyle" placeholder="Enter lifestyle factors"></textarea>
+        <button onclick="generateTreatment()">Generate Treatment Plan</button>
+        <div id="treatment-result"></div>
+    </div>
+
+    
+    <div id="virtual-assistant-section" style="display: none;">
+        <button id="back-to-dashboard" onclick="showDashboard()" style="cursor: pointer;">← Back to Dashboard</button>
+        <h2>Virtual Assistant</h2>
+        <input type="text" id="assistant-query" placeholder="Ask your question...">
+        <button onclick="askAssistant()">Ask</button>
+        <div id="assistant-response"></div>
+    </div>
+    
+    
+
+    <div id="drug-discovery-section" style="display:none;">
+        <button id="back-to-dashboard" onclick="showDashboard()" style="cursor: pointer;">← Back to Dashboard</button>
+
+        <h2>Drug Discovery Simulation</h2>
+        <button onclick="discoverDrug()">Start Drug Discovery</button>
+        <div id="drug-discovery-result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
